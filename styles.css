@@ -105,3 +105,8 @@ main {
   max-width: 600px;
   width: 100%;
 }
+
+.commentsSection {
+  overflow-y: auto;
+  max-height: 200px;
+}
