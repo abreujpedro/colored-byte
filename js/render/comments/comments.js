@@ -51,10 +51,14 @@ export default function comments() {
     return commentInput.value;
   }
 
+  function verifyComment(comment) {
+    return !!comment;
+  }
+
   function callbackAddCommentState() {
     const user = 'comment';
     const comment = selectComment();
-    if (comment) {
+    if (verifyComment(comment)) {
       simulateId++;
       commentsDispatch.addComment({ simulateId, user, comment });
     }
