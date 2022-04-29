@@ -4,7 +4,7 @@ import like from './render/like/like.js';
 import theme from './render/theme/theme.js';
 import pictures from './render/pictures/pictures.js';
 
-// comments();
+comments();
 like();
 theme();
 pictures();
