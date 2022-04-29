@@ -10,9 +10,12 @@ export default function pictures() {
   const swiperDivsSlides = document.querySelectorAll('.swiper-slide');
 
   function createLoading() {
+    const divParent = document.createElement('div');
     const divLoading = document.createElement('div');
+    divParent.classList.add('loadingParentDiv');
+    divParent.appendChild(divLoading);
     divLoading.classList.add('loadingAnimation');
-    return divLoading;
+    return divParent;
   }
 
   function handleLoadingApi(state) {
@@ -20,12 +23,12 @@ export default function pictures() {
     if (myState === null) {
       return null;
     }
-    if (myState === 'loading') {
+    if (myState === 'pending') {
       for (let index = 0; index < numberOfPictures; index++) {
         swiperDivsSlides[index].appendChild(createLoading());
       }
     } else {
-      const animationElements = document.querySelectorAll('.loadingAnimation');
+      const animationElements = document.querySelectorAll('.loadingParentDiv');
       for (let index = 0; index < animationElements.length; index++) {
         animationElements[index].remove();
       }
