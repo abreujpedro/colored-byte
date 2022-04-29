@@ -1,4 +1,4 @@
-import { requestPictureDispatch } from '../../states/requestPictureState/requestPictureState';
+import { requestPictureDispatch } from '../../states/requestPictureState/requestPictureState.js';
 
 export default async function fetchPictures() {
   requestPictureDispatch.pendingReducer();
