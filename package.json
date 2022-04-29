@@ -1,0 +1,22 @@
+{
+  "name": "colored-byte",
+  "version": "1.0.0",
+  "description": "Test Front End",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/abreujpedro/colored-byte.git"
+  },
+  "author": "João Abreu",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/abreujpedro/colored-byte/issues"
+  },
+  "homepage": "https://github.com/abreujpedro/colored-byte#readme",
+  "dependencies": {
+    "swiper": "^8.1.4"
+  }
+}
