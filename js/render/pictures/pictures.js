@@ -12,11 +12,9 @@ export default function pictures() {
 
   async function renderAllPictures() {
     const requestPictures = await fetchPictures();
-    console.log(requestPictures.data);
     if (requestPictures.stateRequest === "fullfiled") {
       for (let index = 0; index < 3; index++) {
         const item = requestPictures.data[index];
-        console.log(item);
         swiperDivsSlides[index].appendChild(
           addNewPicture(item.download_url, "s")
         );

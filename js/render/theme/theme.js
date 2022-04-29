@@ -6,14 +6,14 @@ import {
 export default function theme() {
   const root = document.querySelector(":root");
   function setLightTheme() {
-    root.style.setProperty("--color-one", "#E5E5E5");
+    root.style.setProperty("--color-one", "#FFFFFF");
     root.style.setProperty("--color-two", "#FCFCFC");
     root.style.setProperty("--color-three", "#000000");
     root.style.setProperty("--color-four", "#F1F1F1");
     root.style.setProperty("--color-five", "#3D8AFF");
   }
   function setDarkTheme() {
-    root.style.setProperty("--color-one", "#E5E5E5");
+    root.style.setProperty("--color-one", "#FFFFFF");
     root.style.setProperty("--color-two", "#FCFCFC");
     root.style.setProperty("--color-three", "#000000");
     root.style.setProperty("--color-four", "#F1F1F1");
