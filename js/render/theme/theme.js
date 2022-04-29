@@ -1,29 +1,34 @@
-import { themeStateListener } from '../../states/themeState/themeState.js';
+import {
+  themeStateListener,
+  getThemeState,
+} from "../../states/themeState/themeState.js";
 
 export default function theme() {
-  const root = document.querySelector(':root');
+  const root = document.querySelector(":root");
   function setLightTheme() {
-    root.style.setProperty('--color-one', '#FFFFFF');
-    root.style.setProperty('--color-two', '#FFFFFF');
-    root.style.setProperty('--color-three', '#FFFFFF');
-    root.style.setProperty('--color-four', '#FFFFFF');
-    root.style.setProperty('--color-five', '#FFFFFF');
+    root.style.setProperty("--color-one", "#E5E5E5");
+    root.style.setProperty("--color-two", "#FCFCFC");
+    root.style.setProperty("--color-three", "#000000");
+    root.style.setProperty("--color-four", "#F1F1F1");
+    root.style.setProperty("--color-five", "#3D8AFF");
   }
   function setDarkTheme() {
-    root.style.setProperty('--color-one', '#FFFFFF');
-    root.style.setProperty('--color-two', '#FFFFFF');
-    root.style.setProperty('--color-three', '#FFFFFF');
-    root.style.setProperty('--color-four', '#FFFFFF');
-    root.style.setProperty('--color-five', '#FFFFFF');
+    root.style.setProperty("--color-one", "#E5E5E5");
+    root.style.setProperty("--color-two", "#FCFCFC");
+    root.style.setProperty("--color-three", "#000000");
+    root.style.setProperty("--color-four", "#F1F1F1");
+    root.style.setProperty("--color-five", "#3D8AFF");
   }
 
   function handleTheme(state) {
-    if (state.myState === 'light') {
+    if (state.myState === "light") {
       setLightTheme();
-    } else if (state.myState === 'dark') {
+    } else if (state.myState === "dark") {
       setDarkTheme();
     }
   }
+
+  handleTheme({ myState: getThemeState() });
 
   themeStateListener(handleTheme);
 }

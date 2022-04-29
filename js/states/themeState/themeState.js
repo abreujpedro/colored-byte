@@ -1,27 +1,27 @@
-import factoryState from '../stateFactory.js';
+import factoryState from "../stateFactory.js";
 
 function setLightThemeReducer(state) {
-  return 'light';
+  return "light";
 }
 
 function setDarkThemeReducer(state) {
-  return 'dark';
+  return "dark";
 }
 
 const themeState = factoryState();
-themeState.createSlice(false, [
-  { type: 'setLightTheme', fn: setLightThemeReducer },
-  { type: 'setDarkTheme', fn: setDarkThemeReducer },
+themeState.createSlice("light", [
+  { type: "setLightTheme", fn: setLightThemeReducer },
+  { type: "setDarkTheme", fn: setDarkThemeReducer },
 ]);
 
 const setLightTheme = () =>
   themeState.dispatch({
-    type: 'setLightTheme',
+    type: "setLightTheme",
   });
 
 const setDarkTheme = () =>
   themeState.dispatch({
-    type: 'setLightTheme',
+    type: "setLightTheme",
   });
 
 export const themeStateListener = (callback) =>

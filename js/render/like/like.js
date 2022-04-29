@@ -1,4 +1,3 @@
-//TODO : STRICT MOD
 import {
   likeDispatch,
   likeStateListener,
@@ -9,9 +8,11 @@ export default function like() {
 
   function changeBtnColor(state) {
     if (state.myState) {
-      likeBtn.style.background = "red";
+      likeBtn.setAttribute("src", "./assets/svgs/heartFilled.svg");
+      likeBtn.setAttribute("alt", "Like button filled");
     } else {
-      likeBtn.style.background = "black";
+      likeBtn.setAttribute("src", "./assets/svgs/heartNoFill.svg");
+      likeBtn.setAttribute("alt", "Like button without fill");
     }
   }
 
