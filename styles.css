@@ -153,6 +153,16 @@ main {
   line-height: 12px;
 }
 
+.swiper {
+  width: 100%;
+  height: 325px;
+}
+
+.swiper-slide img {
+  width: 526px;
+  height: 325px;
+}
+
 .iconsList {
   display: flex;
   align-items: center;

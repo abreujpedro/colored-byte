@@ -1,8 +1,14 @@
-import requestFactory from '../requestFactory';
-
 export default async function fetchPictures() {
-  const fetchObj = await requestFactory(
-    'https://picsum.photos/v2/list?limit=3',
-  );
-  return fetchObj;
+  let stateRequest = "pending";
+  let error = null;
+  try {
+    const response = await fetch("https://picsum.photos/v2/list?limit=3");
+    const data = await response.json();
+    stateRequest = "fullfiled";
+    return { data, stateRequest, error };
+  } catch (errorParam) {
+    stateRequest = "reject";
+    error = errorParam;
+    return { data, stateRequest, error };
+  }
 }
