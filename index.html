@@ -1,73 +1,63 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <link rel="stylesheet" href="styles.css" />
-    <link
-      rel="stylesheet"
-      href="https://unpkg.com/swiper@8/swiper-bundle.min.css"
-    />
-    <title>Colored Byte</title>
-  </head>
 
-  <body>
-    <main>
-      <div class="profileContent container">
-        <div>
-          <img src="./assets/imgs/Ellipse 1.png" alt="Erick Profile Picture" />
-        </div>
-        <div>
-          <h2 class="nameProfile">Erick Dunlop</h2>
-          <p class="placeProfile">San Francisco, California</p>
-        </div>
+<head>
+  <meta charset="UTF-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <link rel="stylesheet" href="styles.css" />
+  <link rel="stylesheet" href="https://unpkg.com/swiper@8/swiper-bundle.min.css" />
+  <title>Colored Byte</title>
+</head>
+
+<body>
+  <main>
+    <div class="profileContent container">
+      <div>
+        <img src="./assets/imgs/Ellipse 1.png" alt="Erick Profile Picture" />
       </div>
-      <div class="swiper">
-        <div class="swiper-wrapper">
-          <div class="swiper-slide"></div>
-          <div class="swiper-slide"></div>
-          <div class="swiper-slide"></div>
-        </div>
-        <div class="swiper-pagination"></div>
-        <div class="swiper-button-prev"></div>
-        <div class="swiper-button-next"></div>
+      <div>
+        <h2 class="nameProfile">Erick Dunlop</h2>
+        <p class="placeProfile">San Francisco, California</p>
       </div>
-      <div class="container">
-        <ul class="iconsList">
-          <li>
-            <img
-              src="./assets/svgs/heartNoFill.svg"
-              alt="Like button without fill"
-              id="likeBtn"
-            />
-          </li>
-          <li>
-            <img src="./assets/svgs/comment.svg" alt="Comment button" />
-          </li>
-          <li>
-            <img src="./assets/svgs/share.svg" alt="Share button" />
-          </li>
-        </ul>
-        <div class="postTextContainer">
-          <p>
-            <span>Lucas Credie</span> dolor sit amet, consectetur adipiscing
-            elit. Mi enim ut eu cras ultrices eget et tristique proin. Mi enim
-            ut eu cras ultrices eget et tristique proin.
-          </p>
-        </div>
-        <ul class="commentsSection"></ul>
-        <div class="inputSection">
-          <input
-            type="text"
-            id="commentInput"
-            placeholder="Add a comment"
-            name="commentInput"
-          /><button id="postCommentBtn">Post</button>
-        </div>
+    </div>
+    <div class="swiper">
+      <div class="swiper-wrapper">
+        <div class="swiper-slide"></div>
+        <div class="swiper-slide"></div>
+        <div class="swiper-slide"></div>
       </div>
-    </main>
-    <script src="https://unpkg.com/swiper@8/swiper-bundle.min.js"></script>
-    <script type="module" src="/js/index.js"></script>
-  </body>
+      <div class="swiper-pagination"></div>
+      <div class="swiper-button-prev"></div>
+      <div class="swiper-button-next"></div>
+    </div>
+    <div class="container">
+      <ul class="iconsList">
+        <li>
+          <img src="./assets/svgs/heartNoFill.svg" alt="Like button without fill" id="likeBtn" />
+        </li>
+        <li>
+          <img src="./assets/svgs/comment.svg" alt="Comment button" />
+        </li>
+        <li>
+          <img src="./assets/svgs/share.svg" alt="Share button" />
+        </li>
+      </ul>
+      <div class="postTextContainer">
+        <p>
+          <span>Lucas Credie</span> dolor sit amet, consectetur adipiscing
+          elit. Mi enim ut eu cras ultrices eget et tristique proin. Mi enim
+          ut eu cras ultrices eget et tristique proin.
+        </p>
+      </div>
+      <ul class="commentsSection"></ul>
+      <div class="inputSection">
+        <input type="text" id="commentInput" placeholder="Add a comment" name="commentInput" /><button id="postCommentBtn">Post</button>
+      </div>
+    </div>
+  </main>
+  <script src="https://unpkg.com/swiper@8/swiper-bundle.min.js"></script>
+  <script type="module" src="/js/index.js"></script>
+</body>
+
 </html>

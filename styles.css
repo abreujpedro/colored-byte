@@ -92,7 +92,7 @@ ul {
   list-style: none;
 }
 
-*{
+* {
   box-sizing: border-box;
 }
 
@@ -107,8 +107,8 @@ ul {
 body {
   background-color: var(--color-one);
   font-family: 'Inter', sans-serif;
-  width: 100vw;
-  height: 100vh;
+  width: 100%;
+  min-height: 100vh;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -116,7 +116,7 @@ body {
 
 main {
   color: var(--color-three);
-  border: 1px solid #DEDEDE;
+  border: 1px solid #dedede;
   box-sizing: border-box;
   box-shadow: -1px 7px 8px -5px rgba(0, 0, 0, 0.14);
   border-radius: 5px;
@@ -128,17 +128,18 @@ main {
   padding-top: 15px;
   padding-bottom: 24px;
   background-color: var(--color-two);
+  margin-top: 60px;
+  margin-bottom: 60px;
 }
 
-.profileContent{
+.profileContent {
   display: flex;
   column-gap: 25px;
   margin-bottom: 10px;
   align-items: center;
 }
 
-
-.nameProfile{
+.nameProfile {
   font-style: normal;
   font-weight: 500;
   font-size: 14px;
@@ -179,7 +180,7 @@ main {
   margin-bottom: 22px;
 }
 
-.postTextContainer p{
+.postTextContainer p {
   font-style: normal;
   font-weight: 400;
   font-size: 12px;
@@ -235,10 +236,9 @@ main {
   border-radius: 5px;
 }
 
-
 #commentInput:focus {
   outline: none;
-  border:2px solid var(--color-five);;
+  border: 2px solid var(--color-five);
 }
 
 #postCommentBtn {
@@ -256,4 +256,22 @@ main {
   border: none;
   padding: 0 15px;
   cursor: pointer;
+}
+
+/* Animations */
+
+@keyframes scaleAnimation {
+  0% {
+    transform: scale(1);
+  }
+  50% {
+    transform: scale(1.3);
+  }
+  100% {
+    transform: scale(1);
+  }
+}
+
+.transformScaleAnimation {
+  animation: scaleAnimation 0.3s ease-in-out;
 }
