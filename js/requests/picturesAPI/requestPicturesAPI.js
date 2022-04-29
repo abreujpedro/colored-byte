@@ -1,14 +1,14 @@
+import { requestPictureDispatch } from '../../states/requestPictureState/requestPictureState';
+
 export default async function fetchPictures() {
-  let stateRequest = "pending";
-  let error = null;
+  requestPictureDispatch.pendingReducer();
   try {
-    const response = await fetch("https://picsum.photos/v2/list?limit=3");
+    const response = await fetch('https://picsum.photos/v2/list?limit=3');
     const data = await response.json();
-    stateRequest = "fullfiled";
-    return { data, stateRequest, error };
+    requestPictureDispatch.fullfiledReducer();
+    return data;
   } catch (errorParam) {
-    stateRequest = "reject";
-    error = errorParam;
-    return { data, stateRequest, error };
+    requestPictureDispatch.refusedReducer();
+    throw errorParam;
   }
 }
