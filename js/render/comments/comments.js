@@ -49,7 +49,7 @@ export default function comments() {
 
   renderNewComments({ myState: getCommentsState() }); // first render
 
-  // commentStateListener(renderNewComments); //Observer to render new comments on state change
+  commentStateListener(renderNewComments); //Observer to render new comments on state change
 
   function selectComment() {
     return commentInput.value;
