@@ -1,7 +1,7 @@
 import myDB from "./jsonDB.js";
 
 export default class JsonStrategy {
-  async getAllComments() {
+  getAllComments() {
     return myDB;
   }
 }
