@@ -8,7 +8,7 @@ function addCommentReducer(state, payload) {
 
 const jsonRepository = new JsonStrategy();
 const dataBaseComments = new ContextCommentsStrategy(jsonRepository);
-const initialState = await dataBaseComments.getAllComments();
+const initialState = dataBaseComments.getAllComments();
 
 const commentsState = factoryState();
 commentsState.createSlice(initialState, [
