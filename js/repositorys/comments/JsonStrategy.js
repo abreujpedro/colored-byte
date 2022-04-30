@@ -1,7 +1,11 @@
-import myDB from "./jsonDB.js";
-
 export default class JsonStrategy {
-  getAllComments() {
-    return myDB;
+  async getAllComments() {
+    try {
+      const response = await fetch("./bdJson.json");
+      const comments = await response.json();
+      return comments;
+    } catch (error) {
+      throw new Error(error);
+    }
   }
 }

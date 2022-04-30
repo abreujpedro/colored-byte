@@ -6,12 +6,14 @@ function addCommentReducer(state, payload) {
   return [...state, payload];
 }
 
-// const jsonRepository = new JsonStrategy();
-// const dataBaseComments = new ContextCommentsStrategy(jsonRepository);
-// const initialState = dataBaseComments.getAllComments();
+const jsonRepository = new JsonStrategy();
+const dataBaseComments = new ContextCommentsStrategy(jsonRepository);
+const initialState = await dataBaseComments.getAllComments();
 
 const commentsState = factoryState();
-commentsState.createSlice([], [{ type: "addComment", fn: addCommentReducer }]);
+commentsState.createSlice(initialState, [
+  { type: "addComment", fn: addCommentReducer },
+]);
 
 const addComment = (commentObj) =>
   commentsState.dispatch({
