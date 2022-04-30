@@ -1,20 +1,20 @@
-import fetchPictures from '../../requests/picturesAPI/requestPicturesAPI.js';
+import fetchPictures from "../../requests/picturesAPI/requestPicturesAPI.js";
 import {
   getRequestPictureState,
   requestPictureListener,
-} from '../../states/requestPictureState/requestPictureState.js';
+} from "../../states/requestPictureState/requestPictureState.js";
 
 export default function pictures() {
   const numberOfPictures = 3;
 
-  const swiperDivsSlides = document.querySelectorAll('.swiper-slide');
+  const swiperDivsSlides = document.querySelectorAll(".swiper-slide");
 
   function createLoading() {
-    const divParent = document.createElement('div');
-    const divLoading = document.createElement('div');
-    divParent.classList.add('loadingParentDiv');
+    const divParent = document.createElement("div");
+    const divLoading = document.createElement("div");
+    divParent.classList.add("loadingParentDiv");
     divParent.appendChild(divLoading);
-    divLoading.classList.add('loadingAnimation');
+    divLoading.classList.add("loadingAnimation");
     return divParent;
   }
 
@@ -23,12 +23,12 @@ export default function pictures() {
     if (myState === null) {
       return null;
     }
-    if (myState === 'pending') {
+    if (myState === "pending") {
       for (let index = 0; index < numberOfPictures; index++) {
         swiperDivsSlides[index].appendChild(createLoading());
       }
     } else {
-      const animationElements = document.querySelectorAll('.loadingParentDiv');
+      const animationElements = document.querySelectorAll(".loadingParentDiv");
       for (let index = 0; index < animationElements.length; index++) {
         animationElements[index].remove();
       }
@@ -38,19 +38,19 @@ export default function pictures() {
   requestPictureListener(handleLoadingApi);
 
   function addNewPicture(src, alt) {
-    const imgTag = document.createElement('img');
-    imgTag.setAttribute('src', src);
-    imgTag.setAttribute('alt', alt);
+    const imgTag = document.createElement("img");
+    imgTag.setAttribute("src", src);
+    imgTag.setAttribute("alt", alt);
     return imgTag;
   }
 
   async function renderAllPictures() {
     const requestPictures = await fetchPictures();
-    if (getRequestPictureState() === 'fullfiled') {
+    if (getRequestPictureState() === "fullfiled") {
       for (let index = 0; index < numberOfPictures; index++) {
         const item = requestPictures[index];
         swiperDivsSlides[index].appendChild(
-          addNewPicture(item.download_url, item.author),
+          addNewPicture(item.download_url, item.author)
         );
       }
     }
@@ -58,17 +58,17 @@ export default function pictures() {
 
   renderAllPictures();
 
-  const swiper = new Swiper('.swiper', {
-    direction: 'horizontal',
+  const swiper = new Swiper(".swiper", {
+    direction: "horizontal",
     loop: false,
 
     pagination: {
-      el: '.swiper-pagination',
+      el: ".swiper-pagination",
     },
 
     navigation: {
-      nextEl: '.swiper-button-next',
-      prevEl: '.swiper-button-prev',
+      nextEl: ".swiper-button-next",
+      prevEl: ".swiper-button-prev",
     },
   });
 }
