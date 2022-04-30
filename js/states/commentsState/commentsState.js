@@ -1,5 +1,5 @@
 import factoryState from "../stateFactory.js";
-import JsonStrategy from "../../repositorys/comments/jsonStrategy.js";
+import JsonStrategy from "../../repositorys/comments/JsonStrategy.js";
 import ContextCommentsStrategy from "../../repositorys/comments/ContextCommentsStrategy.js";
 
 function addCommentReducer(state, payload) {
